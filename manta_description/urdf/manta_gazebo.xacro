@@ -47,7 +47,7 @@
             Linear damping: see p.31 in Berg2012
           -->
           <linear_damping>
-            -19.5909 -19.5909 -50.5595 -13.3040 -13.2181 -1.1559
+            -50.5909 -50.5909 -50.5595 -50.3040 -100.2181 -50.1559
           </linear_damping>
           <!--
             The linear damping coefficients proportional to the forward speed
