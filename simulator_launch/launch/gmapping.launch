@@ -4,8 +4,9 @@
 
   <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
     <remap from="scan" to="manta/sonar" />
+    <param name="map_frame" value="world"/>
     <param name="odom_frame" value="manta/odom" />
-    <param name="base_frame" value="manta/base_link" />
+    <param name="base_frame" value="world" />
     <param name="xmin" value="-15.0"/>
     <param name="ymin" value="-15.0"/>
     <param name="xmax" value="15.0"/>
@@ -13,28 +14,28 @@
     <param name="delta" value="0.2"/>
   </node>
 
-<!--
-  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find simulator_launch)/rviz/config_file.rviz" />
--->
 
-<!--
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find simulator_launch)/rviz/config_file.rviz" />
+
+
+
   <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
         <rosparam file="$(find simulator_launch)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find simulator_launch)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find simulator_launch)/params/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find simulator_launch)/params/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find simulator_launch)/params/base_local_planner_params.yaml" command="load" />  
-    <param name="global_costmap/global_frame" value="manta/base_link"/>
+    <param name="global_costmap/global_frame" value="world"/>
     <param name="global_costmap/robot_base_frame" value="manta/base_link"/>
-    <param name="global_costmap/laser_scan_sensor/sensor_frame" value="manta/base_link"/>
+    <param name="global_costmap/laser_scan_sensor/sensor_frame" value="manta/sonar_link"/>
     <param name="global_costmap/laser_scan_sensor/topic" value="manta/sonar"/>    
-    <param name="local_costmap/global_frame" value="manta/odom"/>
+    <param name="local_costmap/global_frame" value="manta/base_link"/>
     <param name="local_costmap/robot_base_frame" value="manta/base_link"/>
     <param name="local_costmap/laser_scan_sensor/sensor_frame" value="manta/base_link"/>
     <param name="local_costmap/laser_scan_sensor/topic" value="manta/sonar"/>
     <param name="local_costmap/obstacle_layer/laser_scan_sensor/topic" value="manta/sonar"/>
   </node>
--->
+
 
 
 
