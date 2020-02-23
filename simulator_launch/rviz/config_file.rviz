@@ -62,7 +62,7 @@ Visualization Manager:
       Draw Behind: true
       Enabled: true
       Name: Map
-      Topic: /map
+      Topic: /manta/global_map
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -230,9 +230,6 @@ Visualization Manager:
               {}
             manta/thruster_7:
               {}
-        world:
-          world_ned:
-            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -306,7 +303,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 7.24171543
+      Distance: 17.7869053
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -321,10 +318,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.634796739
+      Pitch: 0.744796753
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.79540539
+      Yaw: 6.02540588
     Saved: ~
 Window Geometry:
   Displays:

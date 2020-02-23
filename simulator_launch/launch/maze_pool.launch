@@ -4,7 +4,6 @@
   <include file="$(find manta_description)/launch/upload_manta_maze_pool.launch"/>
   <include file="$(find manta_thruster_manager)/launch/thruster_manager.launch"/>
   <include file="$(find navigation_launch)/launch/navigation.launch"/> 
-  <include file="$(find simulator_launch)/launch/gmapping.launch"/> 
   <!--  <include file="$(find vortex)/launch/pc.launch"/> 
   <include file="$(find vortex)/launch/dp_control.launch"/> -->
 <!--	
