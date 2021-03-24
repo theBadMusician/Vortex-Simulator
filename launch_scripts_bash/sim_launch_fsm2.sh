@@ -103,6 +103,6 @@ echo ""
 echo ""
 
 ( roslaunch simulator_launch ${WORLD}.launch gui:=${GUI} camerafront:=${CAMERAFRONT} cameraunder:=${CAMERAUNDER} paused:=${PAUSED} set_timeout:=${SET_TIMEOUT} timeout:=${TIMEOUT} ) &
-( sleep "$SLEEP_TIME" ; roslaunch auv_setup gladlaks.launch type:=simulator | if tee >( grep -q "RLException" ) ; then exit 1; else exit 0; fi) &
+( sleep "$SLEEP_TIME" ; roslaunch auv_setup gladlaks.launch type:=simulator | if tee >( grep -q "RLException" ) ; then exit 0; else exit 0; fi) &
 ( sleep `expr "$SLEEP_TIME" + "$SLEEP_TIME"` ; roslaunch finite_state_machine ${FSM}.launch | if tee >( fgrep -q "$MATCH" ) ; then killall -w roslaunch gzserver gazebo gazebo_gui && exit 0; fi) &&
 fg
