@@ -99,7 +99,7 @@ echo ""
 echo ""
 
 ( roslaunch simulator_launch ${WORLD}.launch gui:=${GUI} camerafront:=${CAMERAFRONT} cameraunder:=${CAMERAUNDER} paused:=${PAUSED} set_timeout:=${SET_TIMEOUT} timeout:=${TIMEOUT} ) &
-( sleep "$SLEEP_TIME" ; roslaunch auv_setup auv.launch type:=simulator ) &
+( sleep "$SLEEP_TIME" ; roslaunch auv_setup auv.launch type:=simulator | if tee >( grep -q "RLException" ) ; then exit 1 ; fi) &
 ( sleep `expr "$SLEEP_TIME" + "$SLEEP_TIME"` ; roslaunch finite_state_machine ${FSM}.launch) &
 
 sleep `expr "$SLEEP_TIME" + "$SLEEP_TIME" + 5`
